@@ -4,7 +4,6 @@ import streamlit as st
 from interface.streamlit_utils import get_img_tag
 from interface.train import render_train_interface
 from math_interface import render_math_sandbox
-from run_torch import TorchTrain
 
 parser = ArgumentParser()
 parser.add_argument("module_num", type=int)
@@ -43,6 +42,7 @@ PAGES = {}
 if module_selection == "Module 0":
     from module_interface import render_module_sandbox
     from run_manual import ManualTrain
+    from run_torch import TorchTrain
 
     def render_run_manual_interface():
         st.header("Module 0 - Manual")
